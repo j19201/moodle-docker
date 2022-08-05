@@ -13,4 +13,4 @@ RUN chown www-data.www-data /var && chown -R www-data.www-data /var/www
 COPY install.sh /var/www/html
 RUN chmod 755 /var/www/html/install.sh
 #デフォルトコマンド設定
-ENTRYPOINT ["/var/www/html/install.sh"]
+CMD ["/var/www/html/install.sh"]
