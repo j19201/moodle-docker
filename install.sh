@@ -1,7 +1,7 @@
 #!/bin/bash
 #データベースが起動しているかどうかをチェック
 echo "データベース待機中"
-while ! nc -w 1 mariadb 3306; do
+while ! nc -w 1 docker-moodle-mariadb 3306; do
     echo -n ".";
     sleep 1;
 done
@@ -15,7 +15,7 @@ cd /var/www/html/ && sudo -u www-data php admin/cli/install.php \
 --wwwroot=http://172.22.1.240:8080 \
 --dataroot=/var/www/moodledata \
 --dbtype=mariadb \
---dbhost=mariadb \
+--dbhost=docker-moodle-mariadb \
 --dbport=3306 \
 --dbname=moodle \
 --dbuser=root \
