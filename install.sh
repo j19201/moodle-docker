@@ -12,7 +12,7 @@ cd /var/www/html/ && sudo -u www-data php admin/cli/install.php \
 --allow-unstable \
 --skip-database \
 --lang=ja \
---wwwroot=http://172.22.1.240:8080 \
+--wwwroot=http://localhost:8080 \
 --dataroot=/var/www/moodledata \
 --dbtype=mariadb \
 --dbhost=docker-moodle-mariadb \
