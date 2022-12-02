@@ -20,20 +20,19 @@ cd /var/www/html/ && sudo -u www-data php admin/cli/install.php \
 --dbname=moodle \
 --dbuser=root \
 --dbpass=moodle \
---fullname="mdl-docker" \
---shortname="mdl-docker" \
+--fullname="mdl-docker-3.8" \
+--shortname="mdl-docker-3.8" \
 --adminuser=admin \
 --adminpass=admin \
---adminemail=admin@example.com \
---supportemail=support@example.com
+--adminemail=admin@example.com
 
 cd /var/www/html/ && sudo -u www-data php admin/cli/install_database.php \
 --lang=ja \
 --adminuser=admin \
 --adminpass=admin \
 --adminemail=admin@example.com \
---fullname="mdl-docker" \
---shortname="mdl-docker" \
+--fullname="mdl-docker-3.8" \
+--shortname="mdl-docker3.8" \
 --agree-license
 
 #apache2起動
