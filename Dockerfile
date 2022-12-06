@@ -5,6 +5,7 @@ RUN apt update && apt -y install libzip-dev zip libpng-dev libicu-dev git netcat
 RUN docker-php-ext-install zip mysqli gd intl
 RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 RUN echo "max_input_vars = 5000" >> /usr/local/etc/php/php.ini
+RUN sed -i -e "s/2M/1000M/g" /usr/local/etc/php/php.ini
 #moodleダウンロード＆ドキュメントルートに移動
 RUN cd /var/www/html && git clone -b MOODLE_38_STABLE https://github.com/moodle/moodle.git && mv moodle/* . && rm -rf moodle
 #パーミッション設定
