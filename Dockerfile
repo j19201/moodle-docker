@@ -10,7 +10,7 @@ RUN cd /var/www/html && git clone -b MOODLE_400_STABLE https://github.com/moodle
 #パーミッション設定
 RUN chown www-data.www-data /var && chown -R www-data.www-data /var/www
 #インストール用バッチファイルをコピー
-COPY install.sh /var/www/html
-RUN chmod 755 /var/www/html/install.sh
+COPY install.sh /var/www/
+RUN chmod 755 /var/www/install.sh
 #デフォルトコマンド設定
-CMD ["/var/www/html/install.sh"]
+CMD ["/var/www/install.sh"]
